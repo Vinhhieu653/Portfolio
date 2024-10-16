@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 function Resume() {
-    const [activeSection, setActiveSection] = useState('Experience'); // Đặt giá trị khởi tạo là "Experience"
+    const [activeSection, setActiveSection] = useState('Experience');
 
     const handleButtonClick = (section) => {
         setActiveSection(section);
@@ -11,7 +11,6 @@ function Resume() {
     return (
         <div className="max-w-6xl mx-auto py-20 px-4 bg-gray-900 text-white">
             <h1 className="text-4xl font-bold mb-6 text-center">Why hire me?</h1>
-            <p className="mb-8 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.</p>
 
             <div className="flex justify-center mb-10">
                 {['Experience', 'Education', 'Skills', 'About me'].map((button) => (
@@ -60,7 +59,6 @@ function Resume() {
                             <h4 className="font-semibold">SOFTWARE ENGINEERING</h4>
                             <p className="text-gray-400">FPT University HCM</p>
                         </div>
-
                     </div>
                 </div>
             )}
@@ -69,73 +67,31 @@ function Resume() {
                 <div>
                     <h2 className="text-3xl font-semibold mb-4">My Skills</h2>
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" className="w-10 h-10 mr-2" />
-                            <span className="text-white">HTML</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">CSS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-10 h-10 mr-2" />
-                            <span className="text-white">JavaScript</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">ReactJS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Node JS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="ExpressJS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Express JS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-10 h-10 mr-2" />
-                            <span className="text-white">MongoDB</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" className="w-10 h-10 mr-2" />
-                            <span className="text-white">MySQL</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Git</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-10 h-10 mr-2" />
-                            <span className="text-white">GitHub</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Bootstrap</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Tailwind CSS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="MUI" className="w-10 h-10 mr-2" />
-                            <span className="text-white">MUI</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SCSS" className="w-10 h-10 mr-2" />
-                            <span className="text-white">SCSS</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="w-10 h-10 mr-2" />
-                            <span className="text-white">Java (basic)</span>
-                        </div>
-                        <div className="flex items-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="JSP/Servlet" className="w-10 h-10 mr-2" />
-                            <span className="text-white">JSP/Servlet (basic)</span>
-                        </div>
+                        {[
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'ReactJS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', name: 'Node JS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', name: 'Express JS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', name: 'MongoDB' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', name: 'MySQL' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', name: 'Git' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', name: 'GitHub' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', name: 'Bootstrap' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', name: 'Tailwind CSS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg', name: 'MUI' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg', name: 'SCSS' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', name: 'Java (basic)' },
+                            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', name: 'JSP/Servlet (basic)' },
+                        ].map((skill) => (
+                            <div key={skill.name} className="flex items-center">
+                                <img src={skill.src} alt={skill.name} className="w-10 h-10 mr-2" />
+                                <span className="text-white">{skill.name}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
-
             )}
 
             {activeSection === 'About me' && (
@@ -158,7 +114,6 @@ function Resume() {
                         <li>Japanese (basic)</li>
                     </ul>
                 </div>
-
             )}
         </div>
     );

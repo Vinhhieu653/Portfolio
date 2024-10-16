@@ -1,3 +1,4 @@
+// src/components/Projects.jsx
 import { motion } from 'framer-motion';
 import ecommerce from '../assets/ecommerce.png';
 import milk from '../assets/milk-store.png';

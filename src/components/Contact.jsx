@@ -4,8 +4,6 @@ import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 export const Contact = () => {
     const formRef = useRef();
     const [form, setForm] = useState({
@@ -87,7 +85,6 @@ export const Contact = () => {
                             className="w-full p-4 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:border-blue-500"
                             required
                         />
-
                         <input
                             type="email"
                             name="email"
@@ -97,7 +94,6 @@ export const Contact = () => {
                             className="w-full p-4 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:border-blue-500"
                             required
                         />
-
                         <input
                             type="tel"
                             name="phone"
@@ -107,7 +103,6 @@ export const Contact = () => {
                             className="w-full p-4 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:border-blue-500"
                             required
                         />
-
                         <textarea
                             name="message"
                             onChange={handleChange}
@@ -117,7 +112,6 @@ export const Contact = () => {
                             rows="4"
                             required
                         />
-
                         <button
                             type="submit"
                             className="w-full p-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-500 transition duration-200"
@@ -128,17 +122,14 @@ export const Contact = () => {
                 </div>
                 <div className="md:w-1/3 p-4 bg-gray-900 rounded-lg">
                     <h3 className="text-lg font-semibold text-white mb-4">My Contact Info</h3>
-
                     <div className="flex items-center mb-4 text-gray-400">
                         <i className="fas fa-envelope text-blue-500 mr-2 text-xl"></i>
                         <p className="text-gray-300">duongvinhhieu652003@gmail.com</p>
                     </div>
-
                     <div className="flex items-center mb-4 text-gray-400">
                         <i className="fas fa-phone-alt text-blue-500 mr-2 text-lg"></i>
                         <p className="text-gray-300">+84 899 793 903</p>
                     </div>
-
                     <div className="flex items-center text-gray-400">
                         <i className="fas fa-map-marker-alt text-blue-500 mr-2 text-xl"></i>
                         <p className="text-gray-300">Vinhomes Grand Park, Long Binh Ward, Thu Duc City, Ho Chi Minh City</p>
