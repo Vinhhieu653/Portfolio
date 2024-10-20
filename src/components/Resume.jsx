@@ -13,7 +13,7 @@ function Resume() {
             <h1 className="text-4xl font-bold mb-6 text-center">Why hire me?</h1>
 
             <div className="flex justify-center mb-10">
-                {['Experience', 'Education', 'Skills', 'About me'].map((button) => (
+                {['Experience', 'Education', 'Certificates', 'Skills', 'About me'].map((button) => (
                     <button
                         key={button}
                         className={`px-4 py-2 mx-2 rounded-lg ${activeSection === button ? 'bg-green-500' : 'bg-gray-800'} text-white`}
@@ -62,6 +62,37 @@ function Resume() {
                     </div>
                 </div>
             )}
+
+            {activeSection === 'Certificates' && (
+                <div>
+                    <h2 className="text-3xl font-semibold mb-8">My Certificates</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-xl font-bold mb-2">CertNexus Certified Ethical Emerging Technologist</h3>
+                            <a href="https://coursera.org/share/ae2a460404cf3da176ac093de85ec85a" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-xl font-bold mb-2">Software Development Lifecycle</h3>
+                            <a href="https://coursera.org/share/d8a617aba9b3544ee305da140cef6c17" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-xl font-bold mb-2">Web Design for Everybody: Basics of Web Development & Coding</h3>
+                            <a href="https://coursera.org/share/afa715fd77d3bd55630fc347a4d5ca9c" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-xl font-bold mb-2">Computer Communications</h3>
+                            <a href="https://coursera.org/share/70dc5d1130e2f9e3976b0e596dd99078" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-xl font-bold mb-2">Academic Skills for University Success</h3>
+                            <a href="https://coursera.org/share/970a02ca7244a08c224b20a3e7118750" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+
+
 
             {activeSection === 'Skills' && (
                 <div>
