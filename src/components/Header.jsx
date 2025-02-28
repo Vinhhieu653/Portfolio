@@ -7,7 +7,7 @@ function Header() {
     return (
         <header className="bg-gray-800 p-4 shadow">
             <nav className="flex justify-between">
-                <h1 className="text-2xl font-bold text-green-400">My Portfolio</h1> {/* Đổi màu tiêu đề */}
+                <Link to='/'>   <h1 className="text-2xl font-bold text-green-400">My Portfolio</h1></Link> {/* Đổi màu tiêu đề */}
                 <ul className="flex space-x-4">
                     <li>
                         <Link
