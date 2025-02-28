@@ -1,4 +1,3 @@
-// src/components/Resume.jsx
 import { useState } from 'react';
 
 function Resume() {
@@ -9,14 +8,15 @@ function Resume() {
     };
 
     return (
-        <div className="max-w-6xl mx-auto py-20 px-4 bg-gray-900 text-white">
-            <h1 className="text-4xl font-bold mb-6 text-center">Why hire me?</h1>
+        <div className="max-w-full sm:max-w-6xl mx-auto py-10 sm:py-20 px-4 sm:px-6 bg-gray-900 text-white">
+            <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-center">Why hire me?</h1>
 
-            <div className="flex justify-center mb-10">
+            <div className="flex flex-wrap justify-center mb-10 gap-2 sm:gap-4">
                 {['Experience', 'Education', 'Certificates', 'Skills', 'About me'].map((button) => (
                     <button
                         key={button}
-                        className={`px-4 py-2 mx-2 rounded-lg ${activeSection === button ? 'bg-green-500' : 'bg-gray-800'} text-white`}
+                        className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg ${activeSection === button ? 'bg-green-500' : 'bg-gray-800'
+                            } text-white text-sm sm:text-base`}
                         onClick={() => handleButtonClick(button)}
                     >
                         {button}
@@ -26,9 +26,9 @@ function Resume() {
 
             {activeSection === 'Experience' && (
                 <div>
-                    <h2 className="text-3xl font-semibold mb-4">My Experience</h2>
-                    <h3 className="text-2xl font-bold mb-2">Personal Projects</h3>
-                    <ul className="list-disc ml-5">
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4">My Experience</h2>
+                    <h3 className="text-lg sm:text-2xl font-bold mb-2">Personal Projects</h3>
+                    <ul className="list-disc ml-5 text-sm sm:text-base">
                         <li className="mt-4">
                             <strong>E-Commerce Project</strong><br />
                             <ul className="list-inside list-disc">
@@ -52,12 +52,12 @@ function Resume() {
 
             {activeSection === 'Education' && (
                 <div>
-                    <h2 className="text-3xl font-semibold mb-4">My Education</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                            <h3 className="text-xl font-bold mb-2">2021-Now</h3>
-                            <h4 className="font-semibold">SOFTWARE ENGINEERING</h4>
-                            <p className="text-gray-400">FPT University HCM</p>
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4">My Education</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">2021-Now</h3>
+                            <h4 className="font-semibold text-sm sm:text-base">SOFTWARE ENGINEERING</h4>
+                            <p className="text-gray-400 text-sm sm:text-base">FPT University HCM</p>
                         </div>
                     </div>
                 </div>
@@ -65,39 +65,36 @@ function Resume() {
 
             {activeSection === 'Certificates' && (
                 <div>
-                    <h2 className="text-3xl font-semibold mb-8">My Certificates</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-                            <h3 className="text-xl font-bold mb-2">CertNexus Certified Ethical Emerging Technologist</h3>
-                            <a href="https://coursera.org/share/ae2a460404cf3da176ac093de85ec85a" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-6 sm:mb-8">My Certificates</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8">
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">CertNexus Certified Ethical Emerging Technologist</h3>
+                            <a href="https://coursera.org/share/ae2a460404cf3da176ac093de85ec85a" className="text-green-400 hover:underline text-sm sm:text-base" target="_blank" rel="noopener noreferrer">View Certificate</a>
                         </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-                            <h3 className="text-xl font-bold mb-2">Software Development Lifecycle</h3>
-                            <a href="https://coursera.org/share/d8a617aba9b3544ee305da140cef6c17" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">Software Development Lifecycle</h3>
+                            <a href="https://coursera.org/share/d8a617aba9b3544ee305da140cef6c17" className="text-green-400 hover:underline text-sm sm:text-base" target="_blank" rel="noopener noreferrer">View Certificate</a>
                         </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-                            <h3 className="text-xl font-bold mb-2">Web Design for Everybody: Basics of Web Development & Coding</h3>
-                            <a href="https://coursera.org/share/afa715fd77d3bd55630fc347a4d5ca9c" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">Web Design for Everybody: Basics of Web Development & Coding</h3>
+                            <a href="https://coursera.org/share/afa715fd77d3bd55630fc347a4d5ca9c" className="text-green-400 hover:underline text-sm sm:text-base" target="_blank" rel="noopener noreferrer">View Certificate</a>
                         </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-                            <h3 className="text-xl font-bold mb-2">Computer Communications</h3>
-                            <a href="https://coursera.org/share/70dc5d1130e2f9e3976b0e596dd99078" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">Computer Communications</h3>
+                            <a href="https://coursera.org/share/70dc5d1130e2f9e3976b0e596dd99078" className="text-green-400 hover:underline text-sm sm:text-base" target="_blank" rel="noopener noreferrer">View Certificate</a>
                         </div>
-                        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-                            <h3 className="text-xl font-bold mb-2">Academic Skills for University Success</h3>
-                            <a href="https://coursera.org/share/970a02ca7244a08c224b20a3e7118750" className="text-green-400 hover:underline" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">Academic Skills for University Success</h3>
+                            <a href="https://coursera.org/share/970a02ca7244a08c224b20a3e7118750" className="text-green-400 hover:underline text-sm sm:text-base" target="_blank" rel="noopener noreferrer">View Certificate</a>
                         </div>
                     </div>
                 </div>
             )}
 
-
-
-
             {activeSection === 'Skills' && (
                 <div>
-                    <h2 className="text-3xl font-semibold mb-4">My Skills</h2>
-                    <div className="grid grid-cols-2 gap-4">
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4">My Skills</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         {[
                             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML' },
                             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS' },
@@ -117,8 +114,8 @@ function Resume() {
                             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', name: 'JSP/Servlet (basic)' },
                         ].map((skill) => (
                             <div key={skill.name} className="flex items-center">
-                                <img src={skill.src} alt={skill.name} className="w-10 h-10 mr-2" />
-                                <span className="text-white">{skill.name}</span>
+                                <img src={skill.src} alt={skill.name} className="w-8 h-8 sm:w-10 sm:h-10 mr-2" />
+                                <span className="text-white text-sm sm:text-base">{skill.name}</span>
                             </div>
                         ))}
                     </div>
@@ -127,20 +124,20 @@ function Resume() {
 
             {activeSection === 'About me' && (
                 <div>
-                    <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-                    <p>
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4">About Me</h2>
+                    <p className="text-sm sm:text-base">
                         I am a fourth-year student specializing in software engineering. I love building web applications and exploring new technologies.
                     </p>
 
-                    <h2 className="text-3xl font-semibold mb-4 mt-8">Soft Skills</h2>
-                    <ul className="list-disc ml-5">
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4 mt-6 sm:mt-8">Soft Skills</h2>
+                    <ul className="list-disc ml-5 text-sm sm:text-base">
                         <li>Teamwork</li>
                         <li>Communication skills</li>
                         <li>Flexibility</li>
                     </ul>
 
-                    <h2 className="text-3xl font-semibold mb-4 mt-8">Languages</h2>
-                    <ul className="list-disc ml-5">
+                    <h2 className="text-xl sm:text-3xl font-semibold mb-4 mt-6 sm:mt-8">Languages</h2>
+                    <ul className="list-disc ml-5 text-sm sm:text-base">
                         <li>English</li>
                         <li>Japanese (basic)</li>
                     </ul>
