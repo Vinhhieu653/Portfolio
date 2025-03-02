@@ -27,28 +27,26 @@ function Resume() {
             {activeSection === 'Experience' && (
                 <div>
                     <h2 className="text-xl sm:text-3xl font-semibold mb-4">My Experience</h2>
-                    <h3 className="text-lg sm:text-2xl font-bold mb-2">Personal Projects</h3>
+
+                    <h3 className="text-lg sm:text-2xl font-bold mb-2">Internship</h3>
                     <ul className="list-disc ml-5 text-sm sm:text-base">
                         <li className="mt-4">
-                            <strong>E-Commerce Project</strong><br />
+                            <strong>Software Engineering Intern - FPT Software</strong><br />
                             <ul className="list-inside list-disc">
-                                <li>Developed for e-commerce purposes, targeting customers who want to shop online.</li>
-                                <li>Using ReactJS and Tailwind CSS for the frontend, MongoDB for the database, and Express with Node.js for the backend.</li>
-                                <li>Implemented an MVC structure to control and develop the application.</li>
-                                <li>Designed to be intuitive, ensuring that customers can quickly get accustomed to the shopping process.</li>
-                            </ul>
-                        </li>
-                        <li className="mt-4">
-                            <strong>Milk Store</strong><br />
-                            <ul className="list-inside list-disc">
-                                <li>Developed for people who want to buy milk but do not have time to go outside, allowing them to purchase it conveniently.</li>
-                                <li>Using ReactJS and Tailwind CSS for the frontend, MongoDB for the database, and Express with Node.js for the backend.</li>
-                                <li>Implemented an MVC structure to control and develop the application.</li>
+                                <li>Completed a 4-month internship at FPT Software as a Software Engineering Intern.</li>
+                                <li>Worked on backend development using NestJS, gaining hands-on experience in building APIs and server-side logic.</li>
+                                <li>Developed and optimized backend services, focusing on authentication, database interactions, and performance improvements.</li>
+                                <li>Had exposure to Next.js for frontend development, learning how to integrate frontend with backend services efficiently.</li>
+                                <li>Collaborated with backend and frontend teams to ensure smooth API integration and improve system architecture.</li>
+                                <li>Focused on improving backend skills to gain deeper experience in server-side development.</li>
+                                <li>Learned about Agile methodologies, participated in daily stand-up meetings, and contributed to sprint planning and reviews.</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             )}
+
+
 
             {activeSection === 'Education' && (
                 <div>

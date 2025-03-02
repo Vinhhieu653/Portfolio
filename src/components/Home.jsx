@@ -8,7 +8,7 @@ const stats = [
     { label: 'Years of experience', value: 2 },
     { label: 'Projects completed', value: 3 },
     { label: 'Technologies', value: 5 },
-    { label: 'Code commits', value: 10 },
+    { label: 'Code commits', value: 30 },
 ];
 
 function CountUp({ targetValue }) {
