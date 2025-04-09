@@ -7,20 +7,18 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import ProjectDetail from './components/ProjectDetail';
 
-
 function App() {
   return (
     <Router>
-      <div className="bg-gray-900 text-gray-200 min-h-screen">
+      <div className='bg-gray-900 text-gray-200 min-h-screen'>
         <Header />
-        <main className="p-6">
+        <main className='p-6'>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
-
+            <Route path='/' element={<Home />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/projects/:id' element={<ProjectDetail />} />
+            <Route path='/resume' element={<Resume />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
         </main>
       </div>
