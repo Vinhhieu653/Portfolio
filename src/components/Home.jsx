@@ -1,60 +1,59 @@
 // Home.jsx
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import Image from '../assets/img.jpg';
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import Image from '../assets/img.jpg'
+import React from 'react'
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-};
+}
 
 const staggerContainer = {
   hidden: {},
   show: { transition: { staggerChildren: 0.2 } }
-};
+}
 
 const stats = [
   { label: 'Years of experience', value: 1 + '+' },
   { label: 'Projects completed', value: 3 },
   { label: 'Technologies', value: 10 + '+' },
   { label: 'Code commits', value: 30 + '+' }
-];
+]
 
 function CountUp({ targetValue }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (typeof targetValue !== 'number') return;
-    let start = 0;
-    const duration = 2000;
-    const increment = targetValue / (duration / 50);
+    if (typeof targetValue !== 'number') return
+    let start = 0
+    const duration = 2000
+    const increment = targetValue / (duration / 50)
 
     const interval = setInterval(() => {
-      start += increment;
+      start += increment
       if (start >= targetValue) {
-        setCount(targetValue);
-        clearInterval(interval);
+        setCount(targetValue)
+        clearInterval(interval)
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.floor(start))
       }
-    }, 50);
+    }, 50)
 
-    return () => clearInterval(interval);
-  }, [targetValue]);
+    return () => clearInterval(interval)
+  }, [targetValue])
 
   return (
-    <motion.h3
-      className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 animate-pulse'
-    >
+    <motion.h3 className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 animate-pulse'>
       {typeof targetValue === 'number' ? count : targetValue}
     </motion.h3>
-  );
+  )
 }
 
 CountUp.propTypes = {
   targetValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired
-};
+}
 
 function Home() {
   return (
@@ -78,7 +77,7 @@ function Home() {
             <a
               href='https://www.topcv.vn/xem-cv/B1VUAVkEAwUFUAZXVQZZUlBcBQFTBwRUUVMMXAed2c'
               target='_blank'
-              View My CV
+              rel='noopener noreferrer'
               className='px-6 py-2 border border-green-400 rounded-full text-green-400 hover:bg-green-400 hover:text-black transition'
             >
               View My CV
@@ -102,7 +101,6 @@ function Home() {
               LinkedIn
             </a>
           </div>
-
         </motion.div>
 
         <motion.img
@@ -122,7 +120,7 @@ function Home() {
         ))}
       </motion.div>
     </motion.div>
-  );
+  )
 }
 
-export default Home;
+export default Home

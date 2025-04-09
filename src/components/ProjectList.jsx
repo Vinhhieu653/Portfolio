@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import React from 'react'
 
 const projects = [
   { id: 1, name: 'E-Commerce Project' },
   { id: 2, name: 'Milk Store' }
-];
+]
 
 const ProjectList = () => {
   return (
@@ -22,7 +23,7 @@ const ProjectList = () => {
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectList;
+export default ProjectList

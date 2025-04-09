@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'
+import React from 'react'
 
 const projectData = {
   2: {
@@ -27,11 +28,11 @@ const projectData = {
       'Added a subscription feature for customers who need regular milk deliveries, allowing automated orders and scheduled deliveries.'
     ]
   }
-};
+}
 
 const ProjectDetail = () => {
-  const { id } = useParams();
-  const project = projectData[id];
+  const { id } = useParams()
+  const project = projectData[id]
 
   if (!project)
     return (
@@ -53,7 +54,7 @@ const ProjectDetail = () => {
           </Link>
         </div>
       </div>
-    );
+    )
 
   return (
     <div className='py-8 px-4 sm:px-6 md:px-8 min-h-[70vh]'>
@@ -135,7 +136,7 @@ const ProjectDetail = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectDetail;
+export default ProjectDetail

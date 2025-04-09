@@ -1,11 +1,12 @@
 // src/App.jsx
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import ProjectDetail from './components/ProjectDetail';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import Home from './components/Home'
+import Contact from './components/Contact'
+import Projects from './components/Projects'
+import Resume from './components/Resume'
+import ProjectDetail from './components/ProjectDetail'
+import React from 'react'
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         </main>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
