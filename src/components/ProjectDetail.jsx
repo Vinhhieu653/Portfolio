@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 
 const projectData = {
-  1: {
+  2: {
     name: 'E-Commerce Project',
     details: [
       'Developed for e-commerce purposes, targeting customers who want to shop online and experience a seamless purchasing journey.',
@@ -14,7 +14,7 @@ const projectData = {
       'Added a real-time cart system and order management to enhance the shopping experience and improve user convenience.'
     ]
   },
-  2: {
+  1: {
     name: 'Milk Store',
     details: [
       'Developed for people who want to buy milk but do not have time to go outside, allowing them to purchase it conveniently from anywhere.',

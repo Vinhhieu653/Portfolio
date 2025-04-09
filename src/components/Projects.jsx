@@ -1,5 +1,5 @@
-// src/components/Projects.jsx
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ecommerce from '../assets/ecommerce.png';
 import milk from '../assets/milk-store.png';
@@ -9,14 +9,14 @@ const projects = [
     id: 1,
     name: 'MILKSTORE PROJECT',
     description: 'React JS, MongoDB, Express, Node JS',
-    link: 'https://github.com/Vinhhieu653/milk-store.git',
+    repo: 'https://github.com/Vinhhieu653/milk-store.git',
     image: milk
   },
   {
     id: 2,
     name: 'E-COMMERCE PROJECT',
     description: 'React JS, MongoDB, Express, Node JS',
-    link: 'https://github.com/Vinhhieu653/E-Commerce.git',
+    repo: 'https://github.com/Vinhhieu653/E-Commerce.git',
     image: ecommerce
   }
 ];
@@ -30,23 +30,39 @@ function Projects() {
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className='bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300'
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className='bg-gray-800 p-5 rounded-lg shadow-lg hover:shadow-2xl transition duration-300'
           >
             <Link to={`/projects/${project.id}`}>
-              <img src={project.image} alt={project.name} className='w-full h-48 object-cover rounded-md mb-4' />
+              <motion.img
+                src={project.image}
+                alt={project.name}
+                whileHover={{ scale: 1.05 }}
+                className='w-full h-48 object-cover rounded-md mb-4'
+              />
               <h3 className='text-2xl font-bold text-white mb-2'>{project.name}</h3>
-              <p className='text-gray-300 mb-4'>{project.description}</p>
+              <p className='text-gray-300 text-sm'>{project.description}</p>
             </Link>
-            <a
-              href={project.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-block px-6 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition duration-300'
-            >
-              GO TO REPOSITORY
-            </a>
+
+            <div className='mt-4 flex gap-3'>
+              <a
+                href={project.repo}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2 px-4 py-2 border border-blue-500 text-blue-500 rounded-md hover:bg-blue-500 hover:text-black transition'
+              >
+                <FaGithub />
+                Repo
+              </a>
+              <Link
+                to={`/projects/${project.id}`}
+                className='px-4 py-2 border border-green-400 text-green-400 rounded-md hover:bg-green-400 hover:text-black transition'
+              >
+                View Detail
+              </Link>
+            </div>
           </motion.div>
         ))}
       </div>

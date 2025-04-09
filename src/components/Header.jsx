@@ -1,52 +1,132 @@
 // src/components/Header.jsx
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
-  const location = useLocation(); // Lấy thông tin đường dẫn hiện tại
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Theo dõi scroll để thay đổi style của header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/resume', label: 'Resume' },
+    { path: '/contact', label: 'Contact' }
+  ];
 
   return (
-    <header className='bg-gray-800 p-4 shadow'>
-      <nav className='flex justify-between'>
-        <Link to='/'>
-          {' '}
-          <h1 className='text-2xl font-bold text-green-400'>My Portfolio</h1>
-        </Link>{' '}
-        {/* Đổi màu tiêu đề */}
-        <ul className='flex space-x-4'>
-          <li>
-            <Link
-              to='/'
-              className={`text-white hover:text-green-400 ${location.pathname === '/' ? 'text-green-400 border-b-2 border-green-400 font-semibold' : ''}`}
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-gray-900 bg-opacity-95 shadow-lg py-2'
+        : 'bg-transparent py-4'
+        }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+              <span className="text-white font-bold text-lg">B</span>
+            </div>
+            <h1 className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-green-400'} transition-colors duration-300`}>
+              My Portfolio
+            </h1>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex space-x-8">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`relative py-2 px-1 text-lg font-medium transition-all duration-300 group ${location.pathname === item.path
+                      ? 'text-green-400'
+                      : 'text-gray-300 hover:text-white'
+                      }`}
+                  >
+                    {item.label}
+                    <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-green-400 to-blue-500 transform transition-all duration-300 ${location.pathname === item.path
+                      ? 'w-full'
+                      : 'w-0 group-hover:w-full'
+                      }`}></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            onClick={toggleMobileMenu}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/projects'
-              className={`text-white hover:text-green-400 ${location.pathname === '/projects' ? 'text-green-400 border-b-2 border-green-400 font-semibold' : ''}`}
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/resume'
-              className={`text-white hover:text-green-400 ${location.pathname === '/resume' ? 'text-green-400 border-b-2 border-green-400 font-semibold' : ''}`}
-            >
-              Resume
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/contact'
-              className={`text-white hover:text-green-400 ${location.pathname === '/contact' ? 'text-green-400 border-b-2 border-green-400 font-semibold' : ''}`}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4">
+            <ul className="flex flex-col space-y-3">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`block py-2 px-4 rounded transition-colors ${location.pathname === item.path
+                      ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
+                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                      }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }
