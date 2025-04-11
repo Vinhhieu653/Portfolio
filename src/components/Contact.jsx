@@ -376,7 +376,7 @@ export const Contact = () => {
                     </svg>
                   </a>
                   <a
-                    href='https://www.linkedin.com/in/duonghieu653/'
+                    href='https://www.linkedin.com/in/hieud9/'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-full transition-all duration-300 hover:scale-110'

@@ -108,7 +108,7 @@ function Resume() {
                         />
                       </svg>
                     </span>
-                    4 months
+                    ~ 4 months
                   </p>
 
                   <div className='bg-gray-700 bg-opacity-50 rounded-lg p-4'>
@@ -472,14 +472,25 @@ function Resume() {
                     </h3>
                     <div className='space-y-4'>
                       {[
-                        { name: 'English', icon: '🇬🇧' },
-                        { name: 'Japanese', icon: '🇯🇵', level: 'Basic' }
+                        {
+                          name: 'English',
+                          flag: 'https://flagcdn.com/w40/gb.png',
+                          alt: 'UK Flag'
+                        },
+                        {
+                          name: 'Japanese',
+                          flag: 'https://flagcdn.com/w40/jp.png',
+                          alt: 'Japan Flag',
+                          level: 'Basic'
+                        }
                       ].map((language) => (
                         <div key={language.name} className='flex items-center'>
-                          <div className='text-2xl mr-3'>{language.icon}</div>
+                          <div className='mr-3'>
+                            <img src={language.flag} alt={language.alt} className='w-8 h-auto rounded shadow-sm' />
+                          </div>
                           <div>
                             <div className='font-medium'>{language.name}</div>
-                            <div className='text-sm text-gray-400'>{language.level}</div>
+                            {language.level && <div className='text-sm text-gray-400'>{language.level}</div>}
                           </div>
                         </div>
                       ))}

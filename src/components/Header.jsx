@@ -76,36 +76,41 @@ function Header() {
             </ul>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button className='md:hidden text-gray-300 hover:text-white focus:outline-none' onClick={toggleMobileMenu}>
+          {/* Improved Mobile Menu Button */}
+          <button
+            className='md:hidden flex items-center justify-center p-2 rounded-lg bg-gray-800 hover:bg-green-500 transition-colors duration-300 focus:outline-none'
+            onClick={toggleMobileMenu}
+            aria-label='Toggle menu'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='h-6 w-6'
+              className='h-6 w-6 text-white'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'
+              strokeWidth={2}
             >
               {mobileMenuOpen ? (
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+                <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
               ) : (
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+                <path strokeLinecap='round' strokeLinejoin='round' d='M4 6h16M4 12h16M4 18h16' />
               )}
             </svg>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Improved */}
         {mobileMenuOpen && (
-          <nav className='md:hidden mt-4 pb-4'>
-            <ul className='flex flex-col space-y-3'>
+          <nav className='md:hidden mt-4 pb-4 bg-gray-800 bg-opacity-95 rounded-lg shadow-lg border border-gray-700'>
+            <ul className='flex flex-col'>
               {navItems.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className={`block py-2 px-4 rounded transition-colors ${
+                    className={`block py-3 px-4 transition-colors ${
                       location.pathname === item.path
-                        ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
-                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                        ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white font-medium'
+                        : 'text-white hover:bg-gray-700'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
