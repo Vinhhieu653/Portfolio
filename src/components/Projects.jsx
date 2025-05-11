@@ -52,9 +52,7 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.name}
-                  className={`w-full h-full object-cover object-center transition-all duration-700 ${
-                    hoveredId === project.id ? 'scale-110' : 'scale-100'
-                  }`}
+                  className={`w-full h-full object-cover object-center transition-all duration-700 ${hoveredId === project.id ? 'scale-110' : 'scale-100'}`}
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80`}></div>
                 <div className='absolute bottom-4 left-4'>
@@ -91,6 +89,22 @@ function Projects() {
                     <FaExternalLinkAlt />
                     <span>View Details</span>
                   </Link>
+
+                  {/* Added the new "View Project" button */}
+                  <Link
+                    to={project.name === 'MILKSTORE' ? 'https://milk-store-brown.vercel.app/' : `/projects/${project.id}`}
+                    className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-teal-600 text-white rounded-lg hover:opacity-90 transition duration-300 ${project.name === 'E-COMMERCE' ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    // Disable the link for E-COMMERCE project
+                    onClick={(e) => {
+                      if (project.name === 'E-COMMERCE') e.preventDefault();
+                    }}
+                  >
+                    <span>View Project</span>
+                  </Link>
+
                 </div>
               </div>
             </div>

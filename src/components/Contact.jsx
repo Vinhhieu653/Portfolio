@@ -31,30 +31,40 @@ export const Contact = () => {
     })
   }
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
   const sendEmail = (e) => {
     e.preventDefault()
     setLoading(true)
 
     // Validation checks
-    if (form.name.length < 5) {
-      toast.error('Name must be at least 5 characters long')
+    if (form.name.length < 3) {
+      toast.error('Name must be at least 3 characters long')
       setLoading(false)
       return
     }
+    if (/\d/.test(form.name)) {
+      toast.error('Name must not contain numbers')
+      setLoading(false)
+      return
+    }
+
+    const validateEmail = (email) =>
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
     if (!validateEmail(form.email)) {
       toast.error('Please enter a valid email address')
       setLoading(false)
       return
     }
-    if (form.phone.length < 10) {
-      toast.error('Phone number must be at least 10 digits long')
+
+    const phoneRegex = /^\d{10}$/
+    if (!phoneRegex.test(form.phone)) {
+      toast.error('Phone number must be exactly 10 digits and only contain numbers')
       setLoading(false)
       return
     }
-    if (form.message.length < 3) {
-      toast.error('Message must be at least 3 characters long')
+
+    const xssRegex = /<[^>]+>|[<>`~$%^*+=\\|{}[\];:'"]/g
+    if (xssRegex.test(form.message)) {
+      toast.error('Message contains invalid characters')
       setLoading(false)
       return
     }
